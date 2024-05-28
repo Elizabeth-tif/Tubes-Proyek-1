@@ -24,6 +24,7 @@ function filter() {
 	datatable = $("#datatable").DataTable({
 		ajax: { url: URL, dataSrc: "" },
 		scrollX: true,
+		order: [[6, "desc"]],
 		columns: [
 			{
 				data: "Provinsi_Asal_PTN",
