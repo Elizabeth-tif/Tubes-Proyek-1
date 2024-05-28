@@ -3,6 +3,8 @@ function filter() {
 	var type = document.getElementById("type-selector").value;
 	var snpmb = document.getElementById("snpmb-selector").value;
 	var year = document.getElementById("year-selector").value;
+	var prov = document.getElementById("prov-selector").value;
+	console.log(prov);
 	var URL;
 	var title =
 		"Tabel Peminat dan Daya Tampung Prodi di " +
@@ -75,8 +77,9 @@ function filter() {
 			var datatable = this.api();
 			datatable.rows().every(function (rowIdx, tableLoop, rowLoop) {
 				var PTNType = datatable.cell(rowIdx, 1).data();
-
-				if (type === "all_type" || PTNType.includes(type)) {
+				var PTNProv = datatable.cell(rowIdx, 0).data();
+				console.log(PTNProv.includes(prov));
+				if ((type === "all_type" || PTNType.includes(type)) && (prov === "all_prov" || PTNProv.includes(prov))) {
 					//do nothing
 				} else {
 					datatable.row(rowIdx).remove();
