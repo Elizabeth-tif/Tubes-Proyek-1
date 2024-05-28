@@ -6,6 +6,10 @@
     background-color: #344767;
 }
 
+section {
+    margin: 0 16px;
+}
+
 section > h2 {
     text-align: center;
     margin: 20px 0;
@@ -144,6 +148,11 @@ section > h2 {
 
 .dt-paging-button.page-item.active a {
     color: white;
+}
+
+.background {
+    width: 100%;
+    padding: 0 20px;
 }
 
 @media screen and (max-width: 600px) {
