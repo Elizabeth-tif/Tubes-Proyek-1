@@ -29,7 +29,7 @@ section > h2 {
     background-size: cover;
     cursor: pointer;
     overflow: hidden;
-    border-top: 2px solid #e91e63;
+    border-top: 2px solid #63B3ED;
     border-right: none;
     border-radius: 2rem;
     margin: 0 10px;
@@ -92,7 +92,7 @@ section > h2 {
 
 .c-description h4 {
     text-transform: uppercase;
-    color: #e91e63;
+    color: #63B3ED;
 }
 
 .member-card {
@@ -101,7 +101,7 @@ section > h2 {
 
 .member-card:checked + label {
     width: 600px;
-    border-right: 2px solid #e91e63;
+    border-right: 2px solid #63B3ED;
     border-top: none;
 }
 
@@ -174,7 +174,7 @@ section > h2 {
     
     .member-card + label {
         width: 600px;
-        border-right: 2px solid #e91e63;
+        border-right: 2px solid #63B3ED;
         border-top: none;
     }
     
