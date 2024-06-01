@@ -129,11 +129,19 @@ section > h2 {
     flex-grow: 1;
 }
 
-#datatable td {
+#datatable_Prodi td {
     padding: 12px;
 }
 
-#datatable th {
+#datatable_Prodi th {
+    display: none;
+}
+
+#datatable_PTN td {
+    padding: 12px;
+}
+
+#datatable_PTN th {
     display: none;
 }
 
