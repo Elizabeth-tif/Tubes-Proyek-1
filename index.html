@@ -418,117 +418,186 @@
 			<!-- Analisis Data -->
 			<div class="background bg-gray-200">
 				<section id="data">
-					<h4
-						id="table-title"
-						style="text-align: center; margin: 30px 0 30px"></h4>
-					<div class="d-flex selector-wrapper">
-						<div class="input-group input-group-static mb-4">
-							<label for="snpmb-selector"
-								>Filter berdasarkan jenis seleksi:
-							</label>
-							<select
-								class="form-control"
-								name="snpmb"
-								id="snpmb-selector"
-								onchange="filter()">
-								<option value="SNBP">SNBP</option>
-								<option value="SNBT">SNBT</option>
-							</select>
+					<button class="table-selector" onclick="showTable(1)">Tabel Prodi</button>
+					<button class="table-selector" onclick="showTable(2)">Tabel PTN</button>
+					<div id="prodi-table">
+						<h4
+							id="table-title"
+							style="text-align: center; margin: 30px 0 30px"></h4>
+						<div class="d-flex selector-wrapper">
+							<div class="input-group input-group-static mb-4">
+								<label for="snpmb-selector"
+									>Filter berdasarkan jenis seleksi:
+								</label>
+								<select
+									class="form-control"
+									name="snpmb"
+									id="snpmb-selector"
+									onchange="filterProdi()">
+									<option value="SNBP">SNBP</option>
+									<option value="SNBT">SNBT</option>
+								</select>
+							</div>
+							<div class="input-group input-group-static mb-4">
+								<label for="type-selector"
+									>Filter berdasarkan jenis PTN:
+								</label>
+								<select
+									class="form-control"
+									name="type"
+									id="type-selector"
+									onchange="filterProdi()">
+									<option value="all_type">All Type</option>
+									<option value="PTN Akademik">PTN Akademik</option>
+									<option value="PTN Vokasi">PTN Vokasi</option>
+									<option value="PT KIN">PT KIN</option>
+								</select>
+							</div>
+							<div class="input-group input-group-static mb-4">
+								<label for="year-selector"
+									>Filter berdasarkan tahun:
+								</label>
+								<select
+									class="form-control"
+									name="year"
+									id="year-selector"
+									onchange="filterProdi()">
+									<option value="2019">2019</option>
+									<option value="2020">2020</option>
+									<option value="2021">2021</option>
+									<option value="2022">2022</option>
+									<option value="2023">2023</option>
+								</select>
+							</div>
+							<div class="input-group input-group-static mb-4">
+								<label for="prov-selector"
+									>Filter berdasarkan Provinsi:
+								</label>
+								<select
+									class="form-control"
+									name="province"
+									id="prov-selector"
+									onchange="filterProdi()">
+									<option value="all_prov">Semua Provinsi</option>
+									<option value="Aceh">Aceh</option>
+									<option value="Sumatera Utara">Sumatera Utara</option>
+									<option value="Riau">Riau</option>
+									<option value="Kepulauan Riau">Kepulauan Riau</option>
+									<option value="Sumatera Barat">Sumatera Barat</option>
+									<option value="Jambi">Jambi</option>
+									<option value="Bengkulu">Bengkulu</option>
+									<option value="Sumatera Selatan">Sumatera Selatan</option>
+									<option value="Kepulauan Bangka Belitung">Kepulauan Bangka Belitung</option>
+									<option value="Lampung">Lampung</option>
+									<option value="Banten">Banten</option>
+									<option value="Jakarta Raya">Jakarta Raya</option>
+									<option value="Jawa Barat">Jawa Barat</option>
+									<option value="Jawa Tengah">Jawa Tengah</option>
+									<option value="Yogyakarta">Yogyakarta</option>
+									<option value="Jawa Timur">Jawa Timur</option>
+									<option value="Kalimantan Barat">Kalimantan Barat</option>
+									<option value="Kalimantan Tengah">Kalimantan Tengah</option>
+									<option value="Kalimantan Selatan">Kalimantan Selatan</option>
+									<option value="Kalimantan Timur">Kalimantan Timur</option>
+									<option value="Kalimantan Utara">Kalimantan Utara</option>
+									<option value="Bali">Bali</option>
+									<option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+									<option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+									<option value="Sulawesi Selatan">Sulawesi Selatan</option>
+									<option value="Sulawesi Utara">Sulawesi Utara</option>
+									<option value="Sulawesi Tengah">Sulawesi Tengah</option>
+									<option value="Sulawesi Barat">Sulawesi Barat</option>
+									<option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+									<option value="Gorontalo">Gorontalo</option>
+									<option value="Maluku">Maluku</option>
+									<option value="Maluku Utara">Maluku Utara</option>
+									<option value="Papua">Papua</option>
+									<option value="Papua Selatan">Papua Selatan</option>
+									<option value="Papua Barat">Papua Barat</option>
+								</select>
+							</div>
 						</div>
-						<div class="input-group input-group-static mb-4">
-							<label for="type-selector"
-								>Filter berdasarkan jenis PTN:
-							</label>
-							<select
-								class="form-control"
-								name="type"
-								id="type-selector"
-								onchange="filter()">
-								<option value="all_type">All Type</option>
-								<option value="PTN Akademik">PTN Akademik</option>
-								<option value="PTN Vokasi">PTN Vokasi</option>
-								<option value="PT KIN">PT KIN</option>
-							</select>
-						</div>
-						<div class="input-group input-group-static mb-4">
-							<label for="year-selector"
-								>Filter berdasarkan tahun:
-							</label>
-							<select
-								class="form-control"
-								name="year"
-								id="year-selector"
-								onchange="filter()">
-								<option value="2019">2019</option>
-								<option value="2020">2020</option>
-								<option value="2021">2021</option>
-								<option value="2022">2022</option>
-								<option value="2023">2023</option>
-							</select>
-						</div>
-						<div class="input-group input-group-static mb-4">
-							<label for="prov-selector"
-								>Filter berdasarkan Provinsi:
-							</label>
-							<select
-								class="form-control"
-								name="province"
-								id="prov-selector"
-								onchange="filter()">
-								<option value="all_prov">Semua Provinsi</option>
-								<option value="Aceh">Aceh</option>
-								<option value="Sumatera Utara">Sumatera Utara</option>
-								<option value="Riau">Riau</option>
-								<option value="Kepulauan Riau">Kepulauan Riau</option>
-								<option value="Sumatera Barat">Sumatera Barat</option>
-								<option value="Jambi">Jambi</option>
-								<option value="Bengkulu">Bengkulu</option>
-								<option value="Sumatera Selatan">Sumatera Selatan</option>
-								<option value="Kepulauan Bangka Belitung">Kepulauan Bangka Belitung</option>
-								<option value="Lampung">Lampung</option>
-								<option value="Banten">Banten</option>
-								<option value="Jakarta Raya">Jakarta Raya</option>
-								<option value="Jawa Barat">Jawa Barat</option>
-								<option value="Jawa Tengah">Jawa Tengah</option>
-								<option value="Yogyakarta">Yogyakarta</option>
-								<option value="Jawa Timur">Jawa Timur</option>
-								<option value="Kalimantan Barat">Kalimantan Barat</option>
-								<option value="Kalimantan Tengah">Kalimantan Tengah</option>
-								<option value="Kalimantan Selatan">Kalimantan Selatan</option>
-								<option value="Kalimantan Timur">Kalimantan Timur</option>
-								<option value="Kalimantan Utara">Kalimantan Utara</option>
-								<option value="Bali">Bali</option>
-								<option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
-								<option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
-								<option value="Sulawesi Selatan">Sulawesi Selatan</option>
-								<option value="Sulawesi Utara">Sulawesi Utara</option>
-								<option value="Sulawesi Tengah">Sulawesi Tengah</option>
-								<option value="Sulawesi Barat">Sulawesi Barat</option>
-								<option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
-								<option value="Gorontalo">Gorontalo</option>
-								<option value="Maluku">Maluku</option>
-								<option value="Maluku Utara">Maluku Utara</option>
-								<option value="Papua">Papua</option>
-								<option value="Papua Selatan">Papua Selatan</option>
-								<option value="Papua Barat">Papua Barat</option>
-							</select>
-						</div>
+						<table id="datatable_Prodi" class="table table-striped">
+							<thead>
+								<tr>
+									<th scope="col">Provinsi Asal PTN</th>
+									<th scope="col">Jenis PTN</th>
+									<th scope="col">Nama PTN</th>
+									<th scope="col">Kode Prodi</th>
+									<th scope="col">Nama Prodi</th>
+									<th scope="col">Jenjang</th>
+									<th scope="col">Jumlah Peminat</th>
+									<th scope="col">Jumlah Daya Tampung</th>
+									<th scope="col">Persen Daya Tampung</th>
+								</tr>
+							</thead>
+						</table>
 					</div>
-					<table id="datatable" class="table table-striped">
-						<thead>
-							<tr>
-								<th scope="col">Provinsi Asal PTN</th>
-								<th scope="col">Jenis PTN</th>
-								<th scope="col">Nama PTN</th>
-								<th scope="col">Kode Prodi</th>
-								<th scope="col">Nama Prodi</th>
-								<th scope="col">Jenjang</th>
-								<th scope="col">Jumlah Peminat</th>
-								<th scope="col">Jumlah Daya Tampung</th>
-								<th scope="col">Persen Daya Tampung</th>
-							</tr>
-						</thead>
-					</table>
+
+					<div id="ptn-table" style="display: none;">
+						<h4
+							id="table-ptn-title"
+							style="text-align: center; margin: 30px 0 30px"></h4>
+						<div class="d-flex selector-wrapper">
+							<div class="input-group input-group-static mb-4">
+								<label for="snpmb-selector"
+									>Filter berdasarkan jenis seleksi:
+								</label>
+								<select
+									class="form-control"
+									name="snpmb"
+									id="snpmb-ptn-selector"
+									onchange="filterPTN()">
+									<option value="SNBP">SNBP</option>
+									<option value="SNBT">SNBT</option>
+								</select>
+							</div>
+							<div class="input-group input-group-static mb-4">
+								<label for="type-selector"
+									>Filter berdasarkan jenis PTN:
+								</label>
+								<select
+									class="form-control"
+									name="type"
+									id="type-ptn-selector"
+									onchange="filterPTN()">
+									<option value="all_type">All Type</option>
+									<option value="PTN Akademik">PTN Akademik</option>
+									<option value="PTN Vokasi">PTN Vokasi</option>
+									<option value="PT KIN">PT KIN</option>
+								</select>
+							</div>
+							<div class="input-group input-group-static mb-4">
+								<label for="year-selector"
+									>Filter berdasarkan tahun:
+								</label>
+								<select
+									class="form-control"
+									name="year"
+									id="year-ptn-selector"
+									onchange="filterPTN()">
+									<option value="2019">2019</option>
+									<option value="2020">2020</option>
+									<option value="2021">2021</option>
+									<option value="2022">2022</option>
+									<option value="2023">2023</option>
+								</select>
+							</div>
+						</div>
+						<table id="datatable_PTN" class="table table-striped">
+							<thead>
+								<tr>
+									<th scope="col">Provinsi Asal PTN</th>
+									<th scope="col">Jenis PTN</th>
+									<th scope="col">Nama PTN</th>
+									<th scope="col">Jumlah Prodi</th>
+									<th scope="col">Jumlah Peminat</th>
+									<th scope="col">Jumlah Daya Tampung</th>
+									<th scope="col">Persen Daya Tampung</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
 				</section>
 			</div>
 			<!-- Analisis Data End -->
