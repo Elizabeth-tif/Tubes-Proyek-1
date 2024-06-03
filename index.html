@@ -15,15 +15,15 @@
 
 		<title>Tubes B1</title>
 
-		<!--     Fonts and icons     -->
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+			<!--     Fonts and icons     -->
+			<link
+				rel="stylesheet"
+				type="text/css"
+				href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
 
-		<!-- Nucleo Icons -->
-		<link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
-		<link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+			<!-- Nucleo Icons -->
+			<link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+			<link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
 
 		<!-- Font Awesome Icons -->
 		<script
@@ -101,7 +101,7 @@
 									<li class="nav-item ms-lg-auto">
 										<a
 											class="nav-link nav-link-icon me-2"
-											href="#data">
+											href="pages/visualisasi.html">
 											<i
 												class="fa fa-chart-line me-1"></i>
 											<p
@@ -283,7 +283,7 @@
 					<div class="col-md-8 mx-auto">
 						<div class="text-center">
 							<h1 class="text-white">Data Scraping SNPMB</h1>
-							<h3 class="text-white">Tugas Besar Proyek 1 Kelompok B1</h3>
+							<p class="lead text-white">Tugas Besar Proyek 1 Kelompok B1</p>
 						</div>
 					</div>
 				</div>
@@ -338,8 +338,7 @@
 												Dengan tujuan memberikan informasi yang akurat dan terkini, website ini dirancang untuk membantu calon mahasiswa, orang tua, dan konselor pendidikan dalam mengambil keputusan yang lebih baik mengenai pilihan program studi dan universitas.
 											</p>
 											<a
-												href=".//sections/page-sections/hero-sections.html"
-												target="_blank"
+												href="./pages/visualisasi.html"
 												class="btn btn-white btn-sm w-50 mx-auto mt-3"
 												>Lihat Data Prodi</a
 											>
@@ -418,12 +417,20 @@
 			<!-- Analisis Data -->
 			<div class="background bg-gray-200">
 				<section id="data">
-					<button class="table-selector" onclick="showTable(1)">Tabel Prodi</button>
-					<button class="table-selector" onclick="showTable(2)">Tabel PTN</button>
 					<div id="prodi-table">
-						<h4
-							id="table-title"
-							style="text-align: center; margin: 30px 0 30px"></h4>
+						<div class="d-flex" style="justify-content: space-between; align-items: center;">
+							<h4
+								id="table-title"
+								style="text-align: center; margin: 30px 0; justify-self: unset;"></h4>
+							<a href="pages/visualisasi.html">
+								<button class="btn bg-gradient-primary btn-icon btn-sm" style="height: min-content;" type="button">
+									<div class="d-flex align-items-center">
+										Lihat Semua
+										<i class="material-icons me-2 text-lg" aria-hidden="true">arrow_forward</i>
+									</div>
+								</button>
+							</a>
+						</div>
 						<div class="d-flex selector-wrapper">
 							<div class="input-group input-group-static mb-4">
 								<label for="snpmb-selector"
@@ -533,71 +540,6 @@
 							</thead>
 						</table>
 					</div>
-
-					<div id="ptn-table" style="display: none;">
-						<h4
-							id="table-ptn-title"
-							style="text-align: center; margin: 30px 0 30px"></h4>
-						<div class="d-flex selector-wrapper">
-							<div class="input-group input-group-static mb-4">
-								<label for="snpmb-selector"
-									>Filter berdasarkan jenis seleksi:
-								</label>
-								<select
-									class="form-control"
-									name="snpmb"
-									id="snpmb-ptn-selector"
-									onchange="filterPTN()">
-									<option value="SNBP">SNBP</option>
-									<option value="SNBT">SNBT</option>
-								</select>
-							</div>
-							<div class="input-group input-group-static mb-4">
-								<label for="type-selector"
-									>Filter berdasarkan jenis PTN:
-								</label>
-								<select
-									class="form-control"
-									name="type"
-									id="type-ptn-selector"
-									onchange="filterPTN()">
-									<option value="all_type">All Type</option>
-									<option value="PTN Akademik">PTN Akademik</option>
-									<option value="PTN Vokasi">PTN Vokasi</option>
-									<option value="PT KIN">PT KIN</option>
-								</select>
-							</div>
-							<div class="input-group input-group-static mb-4">
-								<label for="year-selector"
-									>Filter berdasarkan tahun:
-								</label>
-								<select
-									class="form-control"
-									name="year"
-									id="year-ptn-selector"
-									onchange="filterPTN()">
-									<option value="2019">2019</option>
-									<option value="2020">2020</option>
-									<option value="2021">2021</option>
-									<option value="2022">2022</option>
-									<option value="2023">2023</option>
-								</select>
-							</div>
-						</div>
-						<table id="datatable_PTN" class="table table-striped">
-							<thead>
-								<tr>
-									<th scope="col">Provinsi Asal PTN</th>
-									<th scope="col">Jenis PTN</th>
-									<th scope="col">Nama PTN</th>
-									<th scope="col">Jumlah Prodi</th>
-									<th scope="col">Jumlah Peminat</th>
-									<th scope="col">Jumlah Daya Tampung</th>
-									<th scope="col">Persen Daya Tampung</th>
-								</tr>
-							</thead>
-						</table>
-					</div>
 				</section>
 			</div>
 			<!-- Analisis Data End -->
@@ -622,7 +564,7 @@
 						</div>
 						<div class="c-description">
 							<h4>Elizabeth Gita Gracia Trimurti</h4>
-							<p>231524040</p>
+							<p>NIM: 231524040</p>
 						</div>
 					</label>
 					<input
@@ -639,7 +581,7 @@
 						</div>
 						<div class="c-description">
 							<h4>Faisal Bashri Albir</h4>
-							<p>231524042</p>
+							<p>NIM: 231524042</p>
 						</div>
 					</label>
 					<input
@@ -656,7 +598,7 @@
 						</div>
 						<div class="c-description">
 							<h4>Muhammad Zaky Aliyashfi</h4>
-							<p>231524059</p>
+							<p>NIM: 231524059</p>
 						</div>
 					</label>
 					<input
@@ -673,7 +615,7 @@
 						</div>
 						<div class="c-description">
 							<h4>Rio Agasta</h4>
-							<p>231524061</p>
+							<p>NIM: 231524061</p>
 						</div>
 					</label>
 					<input
@@ -690,7 +632,7 @@
 						</div>
 						<div class="c-description">
 							<h4>Tirta Rifky Fauzan</h4>
-							<p>231524063</p>
+							<p>NIM: 231524063</p>
 						</div>
 					</label>
 				</div>
@@ -746,46 +688,9 @@
 		<!--  Google Maps Plugin    -->
 
 		<script src="assets/js/main.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
 		<script
 			src="./assets/js/material-kit.min.js?v=3.0.4"
-			type="text/javascript"></script>
-
-		<script type="text/javascript">
-			if (document.getElementById("state1")) {
-				const countUp = new CountUp(
-					"state1",
-					document.getElementById("state1").getAttribute("countTo")
-				);
-				if (!countUp.error) {
-					countUp.start();
-				} else {
-					console.error(countUp.error);
-				}
-			}
-			if (document.getElementById("state2")) {
-				const countUp1 = new CountUp(
-					"state2",
-					document.getElementById("state2").getAttribute("countTo")
-				);
-				if (!countUp1.error) {
-					countUp1.start();
-				} else {
-					console.error(countUp1.error);
-				}
-			}
-			if (document.getElementById("state3")) {
-				const countUp2 = new CountUp(
-					"state3",
-					document.getElementById("state3").getAttribute("countTo")
-				);
-				if (!countUp2.error) {
-					countUp2.start();
-				} else {
-					console.error(countUp2.error);
-				}
-			}
-		</script>
+			type="text/javascript"></script>		
 		<script
 			src="https://code.jquery.com/jquery-3.7.1.js"
 			integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
