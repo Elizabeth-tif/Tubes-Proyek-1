@@ -112,19 +112,110 @@
 										</a>
 									</li>
 
-									<li class="nav-item ms-lg-auto">
+									<li class="nav-item dropdown dropdown-hover mx-2">
 										<a
-											class="nav-link nav-link-icon me-2"
-											href="#">
+											class="nav-link ps-2 d-flex cursor-pointer align-items-center"
+											id="visualisasiDropdown"
+											data-bs-toggle="dropdown"
+											aria-expanded="false">
 											<i class="fa fa-chart-bar me-1"></i>
-											<p
-												class="d-inline text-sm z-index-1 font-weight-normal"
-												data-bs-toggle="tooltip"
-												data-bs-placement="bottom"
-												title="Visualisasi data dalam bentuk chart">
-												Visualisasi
-											</p>
+											Visualisasi
+											<img
+												src="../assets/img/down-arrow-dark.svg"
+												alt="down-arrow"
+												class="arrow ms-auto ms-md-2" />
 										</a>
+										<ul
+											class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive mt-0 mt-lg-3 p-3 border-radius-lg"
+											aria-labelledby="visualisasiDropdown">
+											<div class="d-none d-lg-block">
+												<ul class="list-group">
+													<li
+														class="nav-item list-group-item border-0 p-0">
+														<a
+															class="dropdown-item py-2 ps-3 border-radius-md"
+															href="#cari">
+															<h6
+																class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
+																Cari PTN
+															</h6>
+														</a>
+													</li>
+													<li
+														class="nav-item list-group-item border-0 p-0">
+														<a
+															class="dropdown-item py-2 ps-3 border-radius-md"
+															href="#topPTN">
+															<h6
+																class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
+																Top 5 PTN
+															</h6>
+														</a>
+													</li>
+													<li
+														class="nav-item list-group-item border-0 p-0">
+														<a
+															class="dropdown-item py-2 ps-3 border-radius-md"
+															href="#topBidangIlmu">
+															<h6
+																class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
+																Top 5 Bidang Ilmu
+															</h6>
+														</a>
+													</li>
+												</ul>
+											</div>
+
+											<div class="row d-lg-none">
+												<div class="col-md-12 g-0">
+													<a
+														class="dropdown-item py-2 ps-3 border-radius-md"
+														href="https://github.com/Elizabeth-tif/1B-PPLD-W5">
+														<h6
+															class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
+															Money Tracker Web
+														</h6>
+														<span class="text-sm"
+															>Aplikasi money
+															tracker berbasis web
+															sebagai tugas
+															pertemuan ke-5</span
+														>
+													</a>
+
+													<a
+														class="dropdown-item py-2 ps-3 border-radius-md"
+														href="https://github.com/Elizabeth-tif/1B-MoneyTracking-Python">
+														<h6
+															class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
+															Money Tracker Python
+														</h6>
+														<span class="text-sm"
+															>Aplikasi money
+															tracking yang dibuat
+															menggunakan
+															python</span
+														>
+													</a>
+
+													<a
+														class="dropdown-item py-2 ps-3 border-radius-md"
+														href="https://github.com/Elizabeth-tif/manga-web-scraping">
+														<h6
+															class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
+															Manga Scraping
+														</h6>
+														<span class="text-sm"
+															>Platform web yang
+															berisi data manga
+															terpopuler beserta
+															statistik
+															lainnya</span
+														>
+													</a>
+												</div>
+											</div>
+										</ul>
 									</li>
 
 									<li class="nav-item ms-lg-auto">
@@ -289,132 +380,138 @@
 		<!-- Navbar End -->
 
 		<!-- Search -->
-		<div class="card card-body shadow-xl mt-5 m-4">
+		<div id="cari" class="card card-body shadow-xl mt-5 m-4">
 			<div class="divider"></div>
 			<h4 style="text-align: center; margin: 0 0 30px">
 				Pencarian Nama PTN
 			</h4>
-			<div class="d-flex" style="justify-content: space-between;">
-				<div class="wrapper" style="flex-grow: 1;">
-					<div class="input-group input-group-static mb-4">
-						<label for="snpmb-type-selector"
-							>Pilih jenis seleksi:
-						</label>
-						<select
-							class="form-control"
-							name="snpmb-type"
-							id="snpmb-type-selector">
-							<option value="SNBP">SNBP</option>
-							<option value="SNBT">SNBT</option>
-						</select>
-					</div>
-					<div class="input-group input-group-static mb-4">
-						<span class="input-group-text"
-							><i class="fas fa-search" aria-hidden="true"></i
-						></span>
-						<label>Cari PTN...</label>
-						<input id="search-input" class="form-control" type="text" />
-					</div>
-					<ul id="results" class="list-group card card-body p-0 border-radius-md shadow-sm results"></ul>
-				</div>
-				<div class="d-flex wrapper px-2" style="flex-grow: 2; flex-direction: column; align-items: center;">
-					<h5 id="univName">Silahkan masukkan nama PTN yang ingin dicari.</h5>
-					<div id="charts">
-						<canvas id="searchPeminatChart" class="p-4 rounded shadow-sm"></canvas>
-						<canvas id="searchDayaTampungChart" class="p-4 rounded shadow-sm"></canvas>
-						<canvas id="perbandinganChart" class="p-4 rounded shadow-sm"></canvas>
+			<h5 id="univName" style="text-align: center;">Silahkan masukkan nama PTN yang ingin dicari.</h5>
+			<div class="gridArea">
+				<div class="d-flex" style="justify-content: space-between;">
+					<div class="wrapper" style="flex-grow: 1;">
+						<div class="input-group input-group-static mb-4">
+							<label for="snpmb-type-selector"
+								>Pilih jenis seleksi:
+							</label>
+							<select
+								class="form-control"
+								name="snpmb-type"
+								id="snpmb-type-selector">
+								<option value="SNBP">SNBP</option>
+								<option value="SNBT">SNBT</option>
+							</select>
+						</div>
+						<div class="input-group input-group-static mb-4">
+							<span class="input-group-text"
+								><i class="fas fa-search" aria-hidden="true"></i
+							></span>
+							<label>Cari PTN...</label>
+							<input id="search-input" class="form-control" type="text" />
+						</div>
+						<ul id="results" class="list-group card card-body p-0 border-radius-md shadow-sm results"></ul>
 					</div>
 				</div>
+				<canvas id="searchPeminatChart" class="p-4 rounded shadow-sm"></canvas>
+				<canvas id="searchDayaTampungChart" class="p-4 rounded shadow-sm"></canvas>
+				<canvas id="perbandinganChart" class="p-4 rounded shadow-sm"></canvas>
 			</div>
 		</div>
 		<!-- Search END -->
 
 		<!-- Top PTN -->
-		<div class="card card-body shadow-xl mt-5 m-4">
+		<div id="topPTN" class="card card-body shadow-xl mt-5 m-4">
 			<div class="divider"></div>
 			<h4 style="text-align: center; margin: 0 0 30px">
 				Top 5 PTN
 			</h4>
-			<div class="input-group input-group-static mb-4">
-				<label for="snpmb-selector">Pilih jenis SNPMB:</label>
-				<select class="form-control" id="snpmb-selector" onchange="visualizeDataPTN()">
-					<option value="SNBP">SNBP</option>
-					<option value="SNBT">SNBT</option>
-				</select>
+			<div class="gridArea">
+				<div class="selectors">
+					<div class="input-group input-group-static mb-4">
+						<label for="snpmb-selector">Pilih jenis SNPMB:</label>
+						<select class="form-control" id="snpmb-selector" onchange="visualizeDataPTN()">
+							<option value="SNBP">SNBP</option>
+							<option value="SNBT">SNBT</option>
+						</select>
+					</div>
+			
+					<div class="input-group input-group-static mb-4">
+						<label for="year-selector">Pilih tahun:</label>
+						<select class="form-control" id="year-selector" onchange="visualizeDataPTN()">
+							<option value="2019">2019</option>
+							<option value="2020">2020</option>
+							<option value="2021">2021</option>
+							<option value="2022">2022</option>
+							<option value="2023">2023</option>
+						</select>
+					</div>
+			
+					<div class="input-group input-group-static mb-4">
+						<label for="PTN-selector">Pilih jenis PTN:</label>
+						<select class="form-control" name="" id="PTN-selector" onchange="visualizeDataPTN()">
+							<option value="AKADEMIK">Akademik</option>
+							<option value="VOKASI">Vokasi</option>
+							<option value="PTKIN">PT KIN</option>
+						</select>
+					</div>
+			
+					<div class="input-group input-group-static mb-4">
+						<label for="chart-type">Pilih jenis visualisasi:</label>
+						<select class="form-control" name="" id="chart-type" onchange="visualizeDataPTN()">
+							<option value="bar">Bar</option>
+							<option value="line">Line</option>
+							<option value="pie">Pie Chart</option>
+						</select>
+					</div>
+				</div>
+		
+				<canvas class="p-4 rounded shadow-sm" id="jp-chart"></canvas>
+				<canvas class="p-4 rounded shadow-sm" id="dt-chart"></canvas>
+				<canvas class="p-4 rounded shadow-sm" id="kt-chart"></canvas>
 			</div>
-	
-			<div class="input-group input-group-static mb-4">
-				<label for="year-selector">Pilih tahun:</label>
-				<select class="form-control" id="year-selector" onchange="visualizeDataPTN()">
-					<option value="2019">2019</option>
-					<option value="2020">2020</option>
-					<option value="2021">2021</option>
-					<option value="2022">2022</option>
-					<option value="2023">2023</option>
-				</select>
-			</div>
-	
-			<div class="input-group input-group-static mb-4">
-				<label for="PTN-selector">Pilih jenis PTN:</label>
-				<select class="form-control" name="" id="PTN-selector" onchange="visualizeDataPTN()">
-					<option value="AKADEMIK">Akademik</option>
-					<option value="VOKASI">Vokasi</option>
-					<option value="PTKIN">PT KIN</option>
-				</select>
-			</div>
-	
-			<div class="input-group input-group-static mb-4">
-				<label for="chart-type">Pilih jenis visualisasi:</label>
-				<select class="form-control" name="" id="chart-type" onchange="visualizeDataPTN()">
-					<option value="bar">Bar</option>
-					<option value="line">Line</option>
-					<option value="pie">Pie Chart</option>
-				</select>
-			</div>
-	
-			<canvas class="p-4 rounded shadow-sm" id="jp-chart"></canvas>
-			<canvas class="p-4 rounded shadow-sm" id="dt-chart"></canvas>
-			<canvas class="p-4 rounded shadow-sm" id="kt-chart"></canvas>
 		</div>
 		<!-- Top PTN END -->
 
 		<!-- Top Bidang Ilmu -->
-		<div class="card card-body shadow-xl mt-5 m-4">
+		<div id="topBidangIlmu" class="card card-body shadow-xl mt-5 m-4">
 			<div class="divider"></div>
 			<h4 style="text-align: center; margin: 0 0 30px">
 				Top 5 Bidang Ilmu
 			</h4>
-			<div class="input-group input-group-static mb-4">
-				<label for="snpmb-selector-2">Pilih jenis SNPMB:</label>
-				<select class="form-control" name="" id="snpmb-selector-2" onchange="visualizeDataMajor()">
-					<option value="SNBP">SNBP</option>
-					<option value="SNBT">SNBT</option>
-				</select>
+			<div class="gridArea">
+				<div class="selectors">
+					<div class="input-group input-group-static mb-4">
+						<label for="snpmb-selector-2">Pilih jenis SNPMB:</label>
+						<select class="form-control" name="" id="snpmb-selector-2" onchange="visualizeDataMajor()">
+							<option value="SNBP">SNBP</option>
+							<option value="SNBT">SNBT</option>
+						</select>
+					</div>
+			
+					<div class="input-group input-group-static mb-4">
+						<label for="year-selector-2">Pilih tahun:</label>
+						<select class="form-control" name="" id="year-selector-2" onchange="visualizeDataMajor()">
+							<option value="2019">2019</option>
+							<option value="2020">2020</option>
+							<option value="2021">2021</option>
+							<option value="2022">2022</option>
+							<option value="2023">2023</option>
+						</select>
+					</div>
+			
+					<div class="input-group input-group-static mb-4">
+						<label for="chart-type-2">Pilih jenis visualisasi:</label>
+						<select class="form-control" name="" id="chart-type-2" onchange="visualizeDataMajor()">
+							<option value="bar">Bar</option>
+							<option value="line">Line</option>
+							<option value="pie">Pie Chart</option>
+						</select>
+					</div>
+				</div>
+		
+				<canvas class="p-4 rounded shadow-sm" id="jp-bidang-chart"></canvas>
+				<canvas class="p-4 rounded shadow-sm" id="dt-bidang-chart"></canvas>
+				<canvas class="p-4 rounded shadow-sm" id="kt-bidang-chart"></canvas>
 			</div>
-	
-			<div class="input-group input-group-static mb-4">
-				<label for="year-selector-2">Pilih tahun:</label>
-				<select class="form-control" name="" id="year-selector-2" onchange="visualizeDataMajor()">
-					<option value="2019">2019</option>
-					<option value="2020">2020</option>
-					<option value="2021">2021</option>
-					<option value="2022">2022</option>
-					<option value="2023">2023</option>
-				</select>
-			</div>
-	
-			<div class="input-group input-group-static mb-4">
-				<label for="chart-type-2">Pilih jenis visualisasi:</label>
-				<select class="form-control" name="" id="chart-type-2" onchange="visualizeDataMajor()">
-					<option value="bar">Bar</option>
-					<option value="line">Line</option>
-					<option value="pie">Pie Chart</option>
-				</select>
-			</div>
-	
-			<canvas class="p-4 rounded shadow-sm" id="jp-bidang-chart"></canvas>
-			<canvas class="p-4 rounded shadow-sm" id="dt-bidang-chart"></canvas>
-			<canvas class="p-4 rounded shadow-sm" id="kt-bidang-chart"></canvas>
 		</div>
 		<!-- Top Bidang Ilmu END -->
 
