@@ -1,0 +1,53 @@
+.divider {
+	height: 3px;
+	width: 300px;
+	border-radius: 20px;
+	margin: 20px auto;
+	background-color: #344767;
+}
+
+section {
+	margin: 0 16px;
+}
+
+section > h2 {
+	text-align: center;
+	margin: 20px 0;
+}
+
+.selector-wrapper {
+	gap: 10px;
+}
+
+.selector-wrapper .input-group {
+	flex-grow: 1;
+}
+
+#datatable_Prodi td {
+	padding: 12px;
+}
+
+#datatable_Prodi th {
+	display: none;
+}
+
+#datatable_PTN td {
+	padding: 12px;
+}
+
+#datatable_PTN th {
+	display: none;
+}
+
+.dt-scroll-head table {
+	margin-bottom: 0;
+}
+
+.dt-scroll-head table th {
+	padding: 12px;
+	text-align: left;
+}
+
+.dt-paging-button.page-item.active a {
+	color: white;
+}
