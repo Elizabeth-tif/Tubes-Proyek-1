@@ -87,12 +87,13 @@ section > h2 {
 
 .c-description p {
     color: #7b809a;
-    padding-top: 5px;
+    margin-bottom: 0;
 }
 
 .c-description h4 {
     text-transform: uppercase;
     color: #63B3ED;
+    margin-bottom: 0;
 }
 
 .member-card {

@@ -20,5 +20,20 @@
 }
 
 canvas {
-    transform: scale(0.9);
+    max-width: 100%;
+    max-height: 600px;
+}
+
+@media screen and (min-width: 1280px) {
+    canvas {
+        max-width: 40%;
+        max-height: 400px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    canvas {
+        max-width: 30%;
+        max-height: 350px;
+    }
 }
