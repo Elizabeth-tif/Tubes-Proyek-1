@@ -36,6 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			// Add click event listener buat setiap result item
 			li.addEventListener("click", function () {
 				PTNName = result.Nama_PTN;
+				canvas1.style.display = "block";
+				canvas2.style.display = "block";
+				canvas3.style.display = "block";
 				changeUniv(PTNName);
 			});
 			resultsContainer.appendChild(li);
@@ -55,9 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		const query = searchInput.value;
 		if (query) {
 			searchUniversities(query);
-            canvas1.style.display = "block";
-            canvas2.style.display = "block";
-            canvas3.style.display = "block";
 		} else {
 			resultsContainer.innerHTML = "";
 		}
@@ -154,7 +154,7 @@ function univVisualization(univ) {
 						univ.JP_2023,
 					],
 					backgroundColor: "rgba(99, 179, 237, 1)",
-					borderColor: "rgba(99, 179, 237, 1)",
+					
 				},
 			],
 		},
@@ -163,7 +163,7 @@ function univVisualization(univ) {
 				title: {
 					display: true,
 					text:
-						"Daya Tampung " +
+						"Jumlah Peminat " +
 						univ.Nama_PTN +
 						" di " +
 						snpmbType +
@@ -194,7 +194,7 @@ function univVisualization(univ) {
 						univ.DT_2023,
 					],
 					backgroundColor: "rgba(99, 179, 237, 1)",
-					borderColor: "rgba(99, 179, 237, 1)",
+					
 				},
 			],
 		},
@@ -228,7 +228,7 @@ function univVisualization(univ) {
 						univ.JP_2023,
 					],
 					backgroundColor: "rgba(99, 179, 237, 1)",
-					borderColor: "rgba(99, 179, 237, 1)",
+					
 				},
 				{
 					label: "Daya Tampung",
@@ -338,7 +338,7 @@ async function visualizeDataPTN() {
 						chartType == "pie"
 							? colorArray1
 							: "rgba(99, 179, 237, 1)",
-					borderColor: "rgba(99, 179, 237, 1)",
+					
 				},
 			],
 		},
@@ -371,7 +371,7 @@ async function visualizeDataPTN() {
 						chartType == "pie"
 							? colorArray2
 							: "rgba(99, 179, 237, 1)",
-					borderColor: "rgba(99, 179, 237, 1)",
+					
 				},
 			],
 		},
@@ -404,7 +404,7 @@ async function visualizeDataPTN() {
 						chartType == "pie"
 							? colorArray3
 							: "rgba(99, 179, 237, 1)",
-					borderColor: "rgba(99, 179, 237, 1)",
+					
 				},
 			],
 		},
@@ -495,7 +495,7 @@ async function visualizeDataMajor() {
 						chartType == "pie"
 							? colorArray1
 							: "rgba(99, 179, 237, 1)",
-					borderColor: "rgba(99, 179, 237, 1)",
+					
 				},
 			],
 		},
@@ -526,7 +526,7 @@ async function visualizeDataMajor() {
 						chartType == "pie"
 							? colorArray2
 							: "rgba(99, 179, 237, 1)",
-					borderColor: "rgba(99, 179, 237, 1)",
+					
 				},
 			],
 		},
@@ -557,7 +557,7 @@ async function visualizeDataMajor() {
 						chartType == "pie"
 							? colorArray3
 							: "rgba(99, 179, 237, 1)",
-					borderColor: "rgba(99, 179, 237, 1)",
+					
 				},
 			],
 		},
